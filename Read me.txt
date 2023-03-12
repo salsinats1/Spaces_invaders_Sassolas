@@ -1,0 +1,81 @@
+Projet CSDEV "Space Invaders" --
+SASSOLAS Stanislas
+Date: 27/02/2023
+
+
+---- Règles du jeu ----.
+
+- Lors du démarrage du jeu, le joueur aura une fenêtre lui permettant de jouer au jeu.
+- Le joueur sera un vaisseau  et aura au total 3 vies dans une partie. Si un ennemi le touche: il perd une vie. Le nombre de vie manquante sera affiché en haut de l'écran.
+- Le joueur se déplace que de gauche à droite avec les touches gauche/droite ou les touches Q/D du clavier. Pour tirer, il appuie sur la touche espace. Le joueur restera toujours sur la 
+  meme ligne.
+- Le joueur peut tirer autant qu'il veut mais les tirs sont séparés de quelques secondes.
+- Les ennemis seront des aliens (3 lignes avec 10 aliens par ligne) et auront chacun qu'une seule vie. Au début, ils seront en haut de la fenêtre.
+- Les ennemis tireront aléatoirement, à chaque fois, 4 aliens tireront (écart de ... secondes) et lorsque l'ennemi le plus à droite/gauche touchera 
+  le bord de la fenêtre, alors il descenderont d'une ligne.
+
+
+
+---- Adresse Répertoire GIT ----
+
+https://github.com/salsinats1/Spaces_invaders_Sassolas.git
+
+
+---- Ou se trouve les implémentations des structures de données demandées ----
+
+Dans le fichier main1.py: Il y a la class Main contenant toutes les fonctions qui vont permettre le fonctionnement du jeu:
+
+- __init__ : constructeur de la classe
+- Jeu : permet d'afficher le jeu
+- Gameloop : permet de lancer le jeu
+- deplacement_alien : permet de faire bouger les aliens
+- deplacement_projectile : permet de faire bouger les projectiles
+- collision : permet de détecter les collisions entre les projectiles et les aliens
+- Shoot : permet de tirer un projectile
+- tir_alien : permet aux aliens de tirer
+
+- Menu: permet l'affichage du menu (Malheureusement je n'ai pas réussi à faire marcher le menu)
+        
+
+Dans le fichier Alien1.py: Il y a une classe Alien avec les fonctions suivantes:
+- __init__ : constructeur de la classe
+- getpositionX : retourne la position en x de l'alien
+- getpositionY : retourne la position en y de l'alien
+- gethauteur : retourne la hauteur de l'alien
+- getlargeur : retourne la largeur de l'alien
+- getvitesse : retourne la vitesse de l'alien
+- getsensdedeplacement : retourne le sens de déplacement de l'alien
+- getvivant : retourne si l'alien est vivant ou non
+- deplacement : permet à l'alien de se déplacer
+
+
+Dans le fichier Spaceship.py: Il y a une classe Spaceship avec les fonctions suivantes:
+- __init__ : constructeur de la classe
+- move : permet au vaisseau de se déplacer
+- getposition : retourne la position du vaisseau 
+
+
+
+Dans le fichier Projectiles.py: Il y a une classe Projectile avec les fonctions suivantes:
+- __init__ : constructeur de la classe
+- getPx : retourne la position en x du projectile
+- getPy : retourne la position en y du projectile
+- getlargeur : retourne la largeur du projectile
+- gethauteur : retourne la hauteur du projectile
+- speed : permet au projectile de se déplacer
+
+
+
+
+A quoi sert une TAD ?
+Les types abstraits de données (TAD) sont  un moyen de décrire des structures de données ( listes, dictionnaires, etc...) et les opérations que l'on peut faire avec ces données (comme ajouter ou supprimer des éléments, trier les éléments, etc.). Cela permet de créer des structures de données personnalisées, sans avoir à se préoccuper de la manière dont ces structures sont implémentées.
+
+A quoi sert une fonction récursive ?
+Les fonctions récursives sont des fonctions qui s'appellent elles-mêmes. Elles sont utiles lorsqu'une tâche peut être divisée en sous-tâches plus petites qui peuvent être résolues de la même manière.
+
+
+Analyse sur l'échec en première session : 
+Le premier space invaders que j'avais fait n'avait pas de fichier main et ne séparait pas les programmes entre plusieurs fichiers. Je n'avais presque pas commenté le code et il n'y avait pas d'en tête. Il n'y avait pas non plus de fichier read me 
+
+En terme de fonctionnalités nouvelles, j'ai initialisé mon jeu et j'ai créé une fonction game loop pour commencer la boucle de jeu. J'ai aussi ajouter le score et le nombre de vie ainsi que le tir des aliens.
+J'ai aussi ajouté des images à mon jeu. La première version, le jeu ne voulait pas se lancer avec des images donc j'étais obligé d'utilisé le canvas pour créer des rectangles.
